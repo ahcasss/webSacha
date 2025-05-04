@@ -12,77 +12,94 @@ body {
   animation-duration: 300s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  overflow: hidden;
+  margin: 0;
+}
+.corner1,
+.corner2,
+.corner3,
+.corner4 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+.corner1 {
+  top: 2vh;
+  left: 2vw;
+  border-top: 1px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
+}
+.corner2 {
+  top: 2vh;
+  right: 2vw;
+  border-top: 1px solid #c0c0c0;
+  border-right: 1px solid #c0c0c0;
+}
+.corner3 {
+  bottom: 2vh;
+  left: 2vw;
+  border-left: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+}
+.corner4 {
+  bottom: 2vh;
+  right: 2vw;
+  border-bottom: 1px solid #c0c0c0;
+  border-right: 1px solid #c0c0c0;
 }
 .main-container {
   position: absolute;
-  height: 200px;
-  width: 60vw;
-  left: 20vw;
+  min-height: 200px;
+  width: 45vw;
+  left: 27.5vw;
   top: 25vh;
-  background-color: #202020;
+  background-color: rgba(32, 32, 32, 0.8);
   padding: 25px;
   border-left: 5px solid #c0c0c0;
   animation-name: main-intro;
   animation-duration: 0.5s;
   animation-timing-function: linear;
+  animation-fill-mode: backwards;
   display: flex;
   flex-direction: row;
-}
-@media (max-width: 1366px) {
-  .main-container {
-    left: 5vw;
-    width: 85vw;
-  }
 }
 @media (max-width: 1080px) {
   .main-container {
     animation-name: main-intro-small;
-    flex-wrap: wrap;
-    left: 2vw;
-    width: 90vw;
-    padding: 10px;
-    height: 600px;
-    top: 5vh;
+    flex-direction: column;
+    left: 3vw;
+    width: 85vw;
+    padding: 2vh 4vw;
+    padding-top: 3vh;
+    min-height: 600px;
+    top: 3vh;
   }
 }
 .main-container .title {
+  height: 200px;
   font-family: consolas;
   font-size: 125px;
   line-height: 0.8em;
-  margin-right: 50px;
+  letter-spacing: 0.15em;
+  margin-right: 25px;
+  align-self: center;
   opacity: 1;
   animation-fill-mode: backwards;
   animation-name: img-intro;
-  animation-duration: 0.15s;
+  animation-duration: 0.6s;
   animation-delay: 0.5s;
   animation-iteration-count: 1;
-}
-@media (max-width: 1080px) {
-  .main-container .title {
-    font-size: 100px;
-    display: inline;
-    width: 50%;
-    margin-right: 0;
-    order: -1;
-  }
-}
-.main-container .img-container {
-  width: 140px;
-  height: 200px;
-  background-image: url("../img/pic512.png");
+  background-image: url("../img/pic.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 1;
-  animation-fill-mode: backwards;
-  animation-name: img-intro;
-  animation-duration: 0.15s;
-  animation-delay: 0.5s;
-  animation-iteration-count: 1;
 }
 @media (max-width: 1080px) {
-  .main-container .img-container {
+  .main-container .title {
     display: inline;
+    margin-right: 0;
+    margin-left: 25px;
+    align-self: start;
   }
 }
 .main-container .link-container {
@@ -92,6 +109,7 @@ body {
   animation-delay: 0.5s;
   opacity: 0;
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -100,10 +118,12 @@ body {
 .main-container .link-container .link-element {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: left;
   align-items: center;
   margin-top: 15px;
   margin-bottom: 15px;
+  width: 100%;
 }
 .main-container .link-container .link-element p {
   margin: 0;
@@ -116,12 +136,36 @@ body {
 .main-container .link-container .link-element p:last-child {
   margin-bottom: 0;
 }
-.main-container .link-container .link-element p br {
-  display: none;
+@media (max-width: 1080px) {
+  .main-container .link-container .link-element p {
+    display: block;
+  }
+}
+.main-container .link-container .link-element a {
+  margin-left: auto;
+  text-align: right;
 }
 @media (max-width: 1080px) {
-  .main-container .link-container .link-element p br {
-    display: inline;
+  .main-container .link-container .link-element a {
+    width: 100%;
+  }
+}
+.main-container .footer-square {
+  display: none;
+  height: 15px;
+  border-left: 15px solid #c0c0c0;
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top: auto;
+}
+@media (max-width: 1080px) {
+  .main-container .footer-square {
+    opacity: 0;
+    display: block;
+    animation-fill-mode: forwards;
+    animation-name: link-intro;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
   }
 }
 .square {

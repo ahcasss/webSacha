@@ -8,13 +8,15 @@
 }
 @keyframes main-intro {
   0% {
+    min-height: 0;
     height: 0px;
-    transform: translate(0, 125px);
+    transform: translate(0, 100px);
     width: 0;
     padding-left: 0px;
     padding-right: 0px;
   }
   50% {
+    min-height: 0;
     height: 200px;
     transform: translate(0, 0);
     width: 0;
@@ -22,13 +24,16 @@
     padding-right: 0px;
   }
   100% {
-    width: 50vw;
+    min-height: 0;
+    height: 200px;
+    width: 45vw;
     padding-left: 25px;
     padding-right: 25px;
   }
 }
 @keyframes main-intro-small {
   0% {
+    min-height: 0;
     height: 0px;
     transform: translate(0, 125px);
     width: 0;
@@ -36,6 +41,7 @@
     padding-right: 0px;
   }
   50% {
+    min-height: 600px;
     height: 600px;
     transform: translate(0, 0);
     width: 0;
@@ -59,11 +65,27 @@
 @keyframes img-intro {
   0% {
     opacity: 0%;
+    background-image: url("../img/pic_1.png");
   }
-  50% {
+  12.5% {
     opacity: 100%;
   }
-  100% {
-    opacity: 0%;
+  16% {
+    background-image: url("../img/pic_2.png");
+  }
+  30% {
+    background-image: url("../img/pic_3.png");
+  }
+  44% {
+    background-image: url("../img/pic_4.png");
+  }
+  58% {
+    background-image: url("../img/pic_5.png");
+  }
+  72% {
+    background-image: url("../img/pic_6.png");
+  }
+  86% {
+    background-image: url("../img/pic_7.png");
   }
 }
