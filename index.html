@@ -5,8 +5,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/animation.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	
+	<script>
+		let animationCount = 7;
+		
+		function onImageLoaded()
+		{	
+			if(--animationCount == 0)
+			{
+				document.getElementsByClassName("title")[0].classList.add("title-animated");
+			}
+		}
+	</script>
 </head>
 <body>
+	<img src="img/pic_1.png" onload="onImageLoaded();" class="preload-img">
+	<img src="img/pic_2.png" onload="onImageLoaded();" class="preload-img">
+	<img src="img/pic_3.png" onload="onImageLoaded();" class="preload-img">
+	<img src="img/pic_4.png" onload="onImageLoaded();" class="preload-img">
+	<img src="img/pic_5.png" onload="onImageLoaded();" class="preload-img">
+	<img src="img/pic_6.png" onload="onImageLoaded();" class="preload-img">
+	<img src="img/pic_7.png" onload="onImageLoaded();" class="preload-img">
 	<div class="corner1"></div>
 	<div class="corner2"></div>
 	<div class="corner3"></div>

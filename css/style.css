@@ -15,6 +15,17 @@ body {
   overflow: hidden;
   margin: 0;
 }
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url("../img/pic_1.png") url("../img/pic_2.png") url("../img/pic_3.png") url("../img/pic_4.png") url("../img/pic_5.png") url("../img/pic_6.png") url("../img/pic_7.png");
+}
+.preload-img {
+  display: none;
+}
 .corner1,
 .corner2,
 .corner3,
@@ -84,15 +95,11 @@ body {
   margin-right: 25px;
   align-self: center;
   opacity: 1;
-  animation-fill-mode: backwards;
-  animation-name: img-intro;
-  animation-duration: 0.6s;
-  animation-delay: 0.5s;
+  animation-name: title-intro;
   animation-iteration-count: 1;
-  background-image: url("../img/pic.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  animation-fill-mode: backwards;
+  animation-duration: 0.125s;
+  animation-delay: 0.5s;
 }
 @media (max-width: 1080px) {
   .main-container .title {
@@ -101,6 +108,18 @@ body {
     margin-left: 25px;
     align-self: start;
   }
+}
+.main-container .title-animated {
+  background-image: url("../img/pic.png");
+  animation-fill-mode: backwards;
+  animation-name: img-intro;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
 }
 .main-container .link-container {
   animation-fill-mode: forwards;
